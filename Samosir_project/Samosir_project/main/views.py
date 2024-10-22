@@ -12,3 +12,11 @@ def my_projects(request):
     context = {'projects': projects}
 
     return render(request, 'main/my_projects.html', context)
+
+
+def project_view(request, project_slug):
+    project = Projects.objects.get(project_slug=project_slug)
+
+    context = {'project': project}
+
+    return render(request, 'main/project.html', context)
