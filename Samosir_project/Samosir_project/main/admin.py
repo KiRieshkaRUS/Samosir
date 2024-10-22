@@ -1,5 +1,6 @@
 from django.contrib import admin
 from . import models
+from django.utils.safestring import mark_safe
 
 
 class ProjectsAdmin(admin.ModelAdmin):
@@ -10,5 +11,18 @@ class ProjectsAdmin(admin.ModelAdmin):
     ordering = ['id', 'date_added']
 
 
-admin.site.register(models.Projects, ProjectsAdmin)
+class ProjectPhotoAdmin(admin.ModelAdmin):
+    list_display = ['project', 'get_html_photo']
+    list_display_links = ['project']
+    search_fields = ['project']
+    ordering = ['project']
+    readonly_fields = ('get_html_photo',)
 
+    def get_html_photo(self, object):
+        return mark_safe(f'<img src="{object.photo.url}", width="50">')
+
+    get_html_photo.short_description = 'Фото'
+
+
+admin.site.register(models.Projects, ProjectsAdmin)
+admin.site.register(models.ProjectPhoto, ProjectPhotoAdmin)

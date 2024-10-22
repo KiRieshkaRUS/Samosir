@@ -17,3 +17,17 @@ class Projects(models.Model):
     class Meta:
         verbose_name = 'Проект'
         verbose_name_plural = 'Проекты'
+
+
+class ProjectPhoto(models.Model):
+    project = models.ForeignKey(Projects, on_delete=models.CASCADE, verbose_name='Проект')
+    photo = models.ImageField(verbose_name='Фото', null=True, upload_to='media/project_photo')
+
+    def __str__(self):
+        return self.project.project_name
+
+    class Meta:
+        verbose_name = 'Фото'
+        verbose_name_plural = 'Фото'
+
+
