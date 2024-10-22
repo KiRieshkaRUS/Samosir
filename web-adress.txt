@@ -1,3 +1,10 @@
 http://127.0.0.1:8000/
 
-Перед этим надо в Терминале перейти Samosir\Samosir_project\Samosir_project (с помщью cd) и прописать команду python manage.py runserver
+Перед этим надо в Терминале перейти Samosir\Samosir_project\Samosir_project (с помщью cd) и прописать команды
+python manage.py makemigration
+python manage.py migrate
+python manage.py runserver
+
+Админка:
+superuser
+357357

@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Мои работы{% endblock %}
+
+{% block content %}
+    <h1>Мои работы</h1>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <h4>Date added: {{project.date_added}}</h4>
+                <a href="">{{project}}</a>
+
+            </li>
+        {% empty %}
+            <li>
+                <h3>На данный момент нет проектов</h3>
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}
