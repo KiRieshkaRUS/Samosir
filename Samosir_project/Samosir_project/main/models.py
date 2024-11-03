@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -30,4 +31,22 @@ class ProjectPhoto(models.Model):
         verbose_name = 'Фото'
         verbose_name_plural = 'Фото'
 
+
+class Order(models.Model):
+    theme = models.CharField(max_length=250, verbose_name='Тема')
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             verbose_name='Пользователь')
+    email = models.EmailField(max_length=100, verbose_name='Электронная почта')
+    phone_number = models.CharField(max_length=300, verbose_name='Номер телефона')
+    address = models.CharField(max_length=300, verbose_name='Адрес доставки')
+    description = models.TextField(verbose_name='Описание заказа')
+    photo = models.ImageField(upload_to='media/orderPhotos', verbose_name='Фото',
+                              null=True)
+
+    def __str__(self):
+        return self.theme
+
+    class Meta:
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
 

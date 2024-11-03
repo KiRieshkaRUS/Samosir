@@ -24,5 +24,19 @@ class ProjectPhotoAdmin(admin.ModelAdmin):
     get_html_photo.short_description = 'Фото'
 
 
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ['id', 'theme', 'user', 'get_html_photo']
+    list_display_links = ['theme']
+    search_fields = ['theme']
+    readonly_fields = ('get_html_photo',)
+
+    def get_html_photo(self, object):
+        if object.photo:
+            return mark_safe(f'<img src="{object.photo.url}", width="50">')
+
+    get_html_photo.short_description = 'Фото'
+
+
 admin.site.register(models.Projects, ProjectsAdmin)
 admin.site.register(models.ProjectPhoto, ProjectPhotoAdmin)
+admin.site.register(models.Order, OrderAdmin)
