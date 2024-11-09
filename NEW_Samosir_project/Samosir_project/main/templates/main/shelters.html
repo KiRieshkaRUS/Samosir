@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Места размещений{% endblock %}
+
+{% block content %}
+    <h1>Места размещений</h1>
+    <ul>
+        {% for shelter in all_shelters %}
+            <li>
+                <a href="{% url 'main:shelter' shelter.shelter_slug %}">{{shelter}}</a>
+
+            </li>
+        {% empty %}
+            <li>
+                <h3>На данный момент нет мест размещений</h3>
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}
