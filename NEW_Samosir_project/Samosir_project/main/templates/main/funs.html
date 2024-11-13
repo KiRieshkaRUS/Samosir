@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Развлечения{% endblock %}
+
+{% block content %}
+    <h1>Развлечения</h1>
+    <ul>
+        {% for fun in all_funs %}
+            <li>
+                <a href="{% url 'main:fun' fun.fun_slug %}">{{fun}}</a>
+
+            </li>
+        {% empty %}
+            <li>
+                <h3>На данный момент нет развлечений</h3>
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

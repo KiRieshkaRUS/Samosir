@@ -1,0 +1,218 @@
+[
+{
+  "model": "main.shelter",
+  "pk": 2,
+  "fields": {
+    "shelter_name": "234",
+    "description": "234",
+    "type": "234",
+    "placement": "234",
+    "price": "234",
+    "rate": "234",
+    "shelter_slug": "234"
+  }
+},
+{
+  "model": "main.shelterphoto",
+  "pk": 1,
+  "fields": {
+    "shelter": 2,
+    "photo": "media/shelter_photo/051f42850d1beff69a92d94f40a6500e.jpg"
+  }
+},
+{
+  "model": "main.shelterphoto",
+  "pk": 2,
+  "fields": {
+    "shelter": 2,
+    "photo": "media/shelter_photo/ыыыыыыыыыыыы.JPG"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-11-09T17:50:18.245Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "123",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-11-09T17:52:55.797Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-11-09T18:00:01.760Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "123",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-11-09T18:05:41.404Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-11-09T18:13:47.003Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "123",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-11-09T18:15:37.712Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-11-09T18:39:25.843Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "234",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-11-09T18:39:45.195Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "ShelterPhoto object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-11-09T18:40:05.723Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "ShelterPhoto object (1)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-11-09T18:40:19.616Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "ShelterPhoto object (1)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-11-09T18:40:29.350Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "ShelterPhoto object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-11-09T18:41:34.113Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "ShelterPhoto object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-11-09T18:41:35.539Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "ShelterPhoto object (2)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$wFb5lhcVHY5Gzm69De89LP$Yso27SQqb9vRuYAYfCDbv1fDVs6t6JPvH51E4AgPvws=",
+    "last_login": "2024-11-09T16:54:09.827Z",
+    "is_superuser": true,
+    "username": "supersuser",
+    "first_name": "",
+    "last_name": "",
+    "email": "kir300604@yandex.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-11-09T16:53:29.135Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
