@@ -29,8 +29,8 @@ class ShelterPhoto(models.Model):
         return self.shelter.shelter_name
 
     class Meta:
-        verbose_name = 'Фото'
-        verbose_name_plural = 'Фото'
+        verbose_name = 'Фото мест размещений'
+        verbose_name_plural = 'Фото мест размещений'
 
 
 class Transport(models.Model):
@@ -61,8 +61,8 @@ class TransportPhoto(models.Model):
         return self.transport.transport_name
 
     class Meta:
-        verbose_name = 'Фото'
-        verbose_name_plural = 'Фото'
+        verbose_name = 'Фото транспорта'
+        verbose_name_plural = 'Фото транспорта'
 
 
 class Fun(models.Model):
@@ -93,6 +93,6 @@ class FunPhoto(models.Model):
         return self.fun.fun_name
 
     class Meta:
-        verbose_name = 'Фото'
-        verbose_name_plural = 'Фото'
+        verbose_name = 'Фото развелчений'
+        verbose_name_plural = 'Фото развелчений'
 
