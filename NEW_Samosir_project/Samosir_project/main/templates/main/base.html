@@ -15,8 +15,6 @@
     <body>
         <a href="{% url 'main:index' %}">Главная</a>-
         <a href="{% url 'main:all_shelters' %}">Где разместиться</a>-
-        <a href="{% url 'main:all_transports' %}">Транспорт</a>-
-        <a href="{% url 'main:all_funs' %}">Развлечения</a>-
         {% if user.is_authenticated %}
             <span>
                 <strong>Здравствуйте, {{user.username}}!</strong>

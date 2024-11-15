@@ -79,11 +79,8 @@ WSGI_APPLICATION = 'Samosir_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'NEW_Samosi',
-        'USER': 'postgres',
-        'PASSWORD': '12345678',
-        'HOST': 'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
