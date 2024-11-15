@@ -79,8 +79,11 @@ WSGI_APPLICATION = 'Samosir_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Samosir_DB',
+        'USER': 'postgres',
+        'PASSWORD': 'Sanini-Epapa-357',
+        'HOST': 'localhost',
     }
 }
 
@@ -136,3 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
