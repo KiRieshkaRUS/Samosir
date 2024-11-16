@@ -2,12 +2,15 @@
 
 {% block title %}Профиль{% endblock %}
 
+    <h1>Профиль пользователя</h1>
+
 {% block content %}
-    <form class="form" action="{% url 'users:profile' %}" method="post">
-        {% csrf_token %}
-        {{ user_form.as_p }}
-        {{ form.as_p }}
-        <button type="submit">Сохранить</button>
-        <input type="hidden" name="next" value="{% url 'main:index' %}" />
-    </form>
+    <h3>{{profile.username}}</h3>
+    <h4>Имя: {{profile.first_name}}</h4>
+    <h4>Фамилия: {{profile.last_name}}</h4>
+    <h4>Email: {{profile.email}}</h4>
+    <h4>Пол: {{profile.gender}}</h4>
+    <h4>Возраст: {{profile.age}}</h4>
+    <a href="{% url 'users:edit_profile' %}">Редактировать профиль</a>
 {% endblock %}
+
