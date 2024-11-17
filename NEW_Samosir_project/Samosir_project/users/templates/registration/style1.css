@@ -1,0 +1,108 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Шапка */
+header {
+    background-color: #fff; /* Белый фон для шапки */
+    padding: 10px 0;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для шапки */
+}
+
+.header-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.red {
+    color: red; /* Красный для "Гос" */
+}
+
+.blue {
+    color: #0078d4; /* Синий для "услуги" */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #0078d4;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f1f1f1;
+}
+
+/* Основной контент */
+main {
+    padding: 20px 0;
+    background: linear-gradient(to bottom, #2958e9, #5a7eed); /* Вертикальный градиент от темно-синего к светло-синему */
+    color: #fff;
+    text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Дополнительный контент с белым фоном */
+.extra-content {
+    background-color: #fff; /* Белый фон */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.extra-content h2 {
+    font-size: 24px;
+    color: #333; /* Темный цвет для заголовка */
+}
+
+.extra-content p {
+    font-size: 18px;
+    color: #666; /* Более светлый цвет для текста */
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
