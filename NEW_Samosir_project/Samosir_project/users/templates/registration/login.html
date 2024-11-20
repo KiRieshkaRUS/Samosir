@@ -1,59 +1,29 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Самосируслуги</title>
-    <link rel="stylesheet" href="style1.css">
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1><span class="red">Самосир</span><span class="blue">услуги</span></h1>
-            </div>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Услуги</a></li>
-                    <li><a href="#">Документы</a></li>
-                    <li><a href="#">Контакты</a></li>
-                    <li><a href="#">Личный кабинет</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Самосируслуги{% endblock %}
+
+
+{% block content %}
 
     <main>
         <section class="content">
             <h2>Добро пожаловать на портал государственных услуг!</h2>
             <p>На острове Самосир Вы сможете укрыться от ужасных последствий Третьей мировой войны, а также провести время с кайфом жи ес!</p>
 			<p><br><br><br><br><br><br><br> </p>
-			
         </section>
     </main>
 
     <!-- Блок с белым фоном и текстом под градиентом -->
     <section class="extra-content">
-        {% extends 'main/base.html' %}
-
-		{% block title %}Авторизация{% endblock %}
-
-		{% block content %}
-			<form class="form" action="{% url 'users:login' %}" method="post">
-				{% csrf_token %}
-				{{form.as_p}}
-				<button type="sybmit">Войти</button>
-				<input type="hidden" name="next" value="{% url 'main:index' %}" />
-			</form>
-			<p>Ещё нет аккаунта</p>
-			<a href="{% url 'users:register' %}">Регистрация</a>
-		{% endblock %}
+        <form class="form" action="{% url 'users:login' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Войти</button>
+            <input type="hidden" name="next" value="{% url 'main:index' %}" />
+        </form>
+        <p>Ещё нет аккаунта</p>
+        <a href="{% url 'users:register' %}">Регистрация</a>
     </section>
 
-    <footer>
-        <p>© 2024 Все права защищены Железным ЕвГением</p>
-    </footer>
-
-</body>
-</html>
+{% endblock %}

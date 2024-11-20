@@ -1,35 +1,51 @@
 <!doctype html>
 <html lang="ru">
+
+    {% load static %}
+
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style1.css' %}">
         <title>
             {% block title %}{% endblock %}
         </title>
     </head>
 
-
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><span class="red">Самосир</span><span class="blue">услуги</span></h1>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="{% url 'main:index' %}">Главная</a></li>
+                    <li><a href="{% url 'main:all_shelters' %}">Где разместиться</a></li>
+                    <li><a href="{% url 'main:all_transports' %}">Транспорт</a></li>
+                    <li><a href="{% url 'main:all_funs' %}">Развлечения</a></li>
+                    {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
+                            <li><a href="{% url 'admin:index' %}">Управление</a></li>
+                        {% else %}
+                            <li><a href="{% url 'users:profile' %}">Профиль</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'users:logout' %}">Выйти</a></li>
+                    {% else %}
+                        <li><a href="{% url 'users:login' %}">Войти</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <body>
-        <a href="{% url 'main:index' %}">Главная</a>-
-        <a href="{% url 'main:all_shelters' %}">Где разместиться</a>-
-        <a href="{% url 'main:all_transports' %}">Транспорт</a>-
-        <a href="{% url 'main:all_funs' %}">Развлечения</a>-
-        {% if user.is_authenticated %}
-            <span>
-                <strong>Здравствуйте, {{user.username}}!</strong>
-            </span>
-            {% if user.is_superuser %}
-                <a href="{% url 'admin:index' %}">Управление</a>-
-            {% endif %}
-            <a href="{% url 'users:profile' %}">Профиль</a>-
-            <a href="{% url 'users:logout' %}">Выйти</a>
-        {% else %}
-            <a href="{% url 'users:login' %}">Войти</a>
-        {% endif %}
 
         {% block content %}{% endblock %}
+
     </body>
+
+    <footer>
+        <p>© 2024 Все права защищены Железным ЕвГением</p>
+    </footer>
+
 </html>
