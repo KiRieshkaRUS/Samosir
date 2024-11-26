@@ -47,7 +47,7 @@ def edit_profile_view(request):
         user.email = form.instance.email
         user.save()
         form.save()
-        return redirect('users:user')
+        return redirect('users:profile')
 
     context = {'form': form}
     return render(request, 'registration/edit_profile.html', context)

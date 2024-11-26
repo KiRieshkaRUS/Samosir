@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'Samosir_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Samosir_DB',
+        'NAME': 'Samosir_BD',
         'USER': 'postgres',
-        'PASSWORD': 'Sanini-Epapa-357',
+        'PASSWORD': '12345',
         'HOST': 'localhost',
     }
 }

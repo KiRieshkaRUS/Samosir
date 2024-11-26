@@ -6,8 +6,9 @@
     <form action="{% url 'users:edit_profile' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
-    <a href="{% url 'users:profile' %}">Сохранить изменения</a>
-    </form>
-    <input type="hidden" name="next" value="{% url 'users:profile' %}">
 
+    <button type="submit">Сохранить изменения</button>
+
+    <input type="hidden" name="next" value="{% url 'users:profile' %}">
+    </form>
 {% endblock %}

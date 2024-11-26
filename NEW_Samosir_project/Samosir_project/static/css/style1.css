@@ -58,7 +58,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #f1f1f1;
+    color: #7366bd; /* Перекрасить в голубой */
 }
 
 /* Основной контент */
@@ -96,6 +96,9 @@ p {
 
 /* Подвал */
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     padding: 15px;
     background-color: #333;
