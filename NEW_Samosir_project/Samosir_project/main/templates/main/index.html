@@ -1,13 +1,21 @@
 {% extends 'main/base.html' %}
 
+{% load static %}
+
 {% block title %}Главная{% endblock %}
 
 {% block content %}
         <main>
         <section class="content">
             <h2>Добро пожаловать на портал Самосирских услуг!</h2>
-            <p>На острове Самосир Вы сможете укрыться от ужасных последствий Третьей мировой войны, а также провести время с кайфом жи ес!</p>
+            <p1>На острове Самосир Вы сможете укрыться от ужасных последствий Третьей мировой войны, а также провести время с кайфом жи ес!</p1>
 			<p><br><br><br><br><br><br><br> </p>
+        </section>
+
+        <section class="extra-content">
+            <video width="320" height="600" controls>
+                <source src="{% static 'main\trailer.mp4' %}" type="video/mp4">
+            </video>
         </section>
     </main>
 {% endblock %}

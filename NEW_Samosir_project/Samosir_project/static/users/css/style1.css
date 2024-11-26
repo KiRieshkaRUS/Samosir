@@ -73,7 +73,7 @@ h2 {
     font-size: 26px;
 }
 
-p {
+p1 {
     font-size: 18px;
 }
 
@@ -107,4 +107,63 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Списки */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    padding: 20px;
+}
+.hotel-info {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Увеличиваем расстояние между каруселью и текстом */
+}
+.hotel-info div {
+    max-width: 500px;
+}
+h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+p {
+    color: #666;
+    font-size: 1em;
+}
+/* Карусель изображений */
+.carousel {
+    position: relative;
+    width: 150px;
+    height: auto;
+    overflow: hidden;
+}
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.carousel-images img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    /* Убираем отступы между картинками */
+    margin-right: 0;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.carousel-button.left {
+    left: 0;
+}
+.carousel-button.right {
+    right: 0;
 }

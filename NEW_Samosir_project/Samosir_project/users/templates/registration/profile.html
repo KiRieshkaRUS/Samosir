@@ -1,11 +1,18 @@
 {% extends 'main/base.html' %}
 
+{% load static %}
+
 {% block title %}Профиль{% endblock %}
 
     <h1>Профиль пользователя</h1>
 
 {% block content %}
     <h3>{{profile.username}}</h3>
+    {% if profile.avatar %}
+        <img src="{{ profile.avatar.url }}" alt="Фото" width="300px" height="auto">
+    {% else %}
+        <img src="{% static 'users\images\default\default_avatar.jpg' %}" width="300" alt="Фото">
+    {% endif %}
     <h4>Имя: {{profile.first_name}}</h4>
     <h4>Фамилия: {{profile.last_name}}</h4>
     <h4>Email: {{profile.email}}</h4>

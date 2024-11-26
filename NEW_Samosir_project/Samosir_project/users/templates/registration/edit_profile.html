@@ -1,14 +1,22 @@
 {% extends 'main/base.html' %}
 
+{% load static %}
+
 {% block title %}Редактирование профиля{% endblock %}
 
 {% block content %}
+    {{ profile.avatar.url }}
+    {% if profile.avatar %}
+        <img src="{{ profile.avatar.url }}" alt="Фото" width="300px" height="auto">
+    {% else %}
+        <img src="{% static 'users\images\default\default_avatar.jpg' %}" width="300" alt="Фото">
+    {% endif %}
     <form action="{% url 'users:edit_profile' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
 
-    <button type="submit">Сохранить изменения</button>
+        <button type="submit">Сохранить изменения</button>
 
-    <input type="hidden" name="next" value="{% url 'users:profile' %}">
+        <input type="hidden" name="next" value="{% url 'users:profile' %}">
     </form>
 {% endblock %}

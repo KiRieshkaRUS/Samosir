@@ -3,13 +3,29 @@
 {% block title %}Развлечения{% endblock %}
 
 {% block content %}
-    <h1>Развлечения</h1>
+    <h1>Информация о развлечениях на острове Самосир</h1>
     <ul>
         {% for fun in all_funs %}
-            <li>
-                <a href="{% url 'main:fun' fun.fun_slug %}">{{fun}}</a>
+            <div class="hotel-info">
+                <div class="carousel">
+                    <div class="carousel-images">
 
-            </li>
+                        <img src="hotel1-1.jpg" alt="Отель Солнечный 1">
+                        <img src="hotel1-2.jpg" alt="Отель Солнечный 2">
+                        <img src="hotel1-3.jpg" alt="Отель Солнечный 3">
+                    </div>
+                    <button class="carousel-button left" onclick="moveCarousel('left', 0)">‹</button>
+                    <button class="carousel-button right" onclick="moveCarousel('right', 0)">›</button>
+                </div>
+                <div>
+                    <h3><a href="{% url 'main:shelter' shelter.shelter_slug %}">{{ transport.shelter_name }}</a></h3>
+                    <p>Тип: {{ fun.type }}</p>
+                    <p>Месторасположение: {{ fun.speed }}</p>
+                    <p>Описание: {{ fun.description }}</p>
+                    <p>Стоимость: {{ fun.price }}</p>
+                    <p>Рейтинг: {{ fun.rate }}</p>
+                </div>
+            </div>
         {% empty %}
             <li>
                 <h3>На данный момент нет развлечений</h3>
@@ -17,4 +33,29 @@
         {% endfor %}
 
     </ul>
+
+    <script>
+        let currentImageIndex = 0;
+
+        function moveCarousel(direction) {
+            const images = document.querySelector('.carousel-images');
+            const totalImages = images.children.length;
+            const imageWidth = images.children[0].offsetWidth; // Ширина изображения
+
+            if (direction === 'left') {
+                currentImageIndex--;
+                if (currentImageIndex < 0) {
+                    currentImageIndex = totalImages - 1; // Вернуться к последнему изображению
+                }
+            } else {
+                currentImageIndex++;
+                if (currentImageIndex >= totalImages) {
+                    currentImageIndex = 0; // Вернуться к первому изображению
+                }
+            }
+
+            const newTransform = -currentImageIndex * imageWidth;
+            images.style.transform = `translateX(${newTransform}px)`;
+        }
+    </script>
 {% endblock %}

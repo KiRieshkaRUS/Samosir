@@ -33,9 +33,9 @@ class EditProfileForm(forms.ModelForm):
     email = forms.EmailField(max_length=100, label='Электронная почта', required=True)
     gender = forms.ChoiceField(label='Пол', choices=GENDER_CHOICES)
     age = forms.IntegerField(label='Возраст', required=True)
-    avatar = forms.ImageField(label='media/user_avatars', required=True)
+    avatar = forms.ImageField(label="Аватарка")
 
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'gender', 'age']
+        fields = ['username', 'first_name', 'last_name', 'email', 'gender', 'age', 'avatar']
 

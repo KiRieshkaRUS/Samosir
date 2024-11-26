@@ -1,13 +1,52 @@
 {% extends 'main/base.html' %}
 
-{% block title %}{{shelter}}{% endblock %}
+{% block title %}Отели{% endblock %}
 
-{% block content %} 
+{% block content %}
+    <p><a href="{% url 'main:all_shelters' %}"><- Назад</a></p>
     <h1>{{shelter}}</h1>
-    <p> 
-        <strong>Type</strong>
-        <br> 
-        {{shelter.type}}
-    </p> 
-    <p><strong>Price:</strong> {{shelter.price}}$</p>
+    <div class="hotel-info">
+        <div class="carousel">
+            <div class="carousel-images">
+
+                <img src="hotel1-1.jpg" alt="Отель Солнечный 1">
+                <img src="hotel1-2.jpg" alt="Отель Солнечный 2">
+                <img src="hotel1-3.jpg" alt="Отель Солнечный 3">
+            </div>
+            <button class="carousel-button left" onclick="moveCarousel('left', 0)">‹</button>
+            <button class="carousel-button right" onclick="moveCarousel('right', 0)">›</button>
+        </div>
+        <div>
+            <p>Тип: {{ shelter.type }}</p>
+            <p>Месторасположение: {{ shelter.placement }}</p>
+            <p>Описание: {{ shelter.description }}</p>
+            <p>Стоимость: {{ shelter.price }}</p>
+            <p>Рейтинг: {{ shelter.rate }}</p>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+
+        function moveCarousel(direction) {
+            const images = document.querySelector('.carousel-images');
+            const totalImages = images.children.length;
+            const imageWidth = images.children[0].offsetWidth; // Ширина изображения
+
+            if (direction === 'left') {
+                currentImageIndex--;
+                if (currentImageIndex < 0) {
+                    currentImageIndex = totalImages - 1; // Вернуться к последнему изображению
+                }
+            } else {
+                currentImageIndex++;
+                if (currentImageIndex >= totalImages) {
+                    currentImageIndex = 0; // Вернуться к первому изображению
+                }
+            }
+
+            const newTransform = -currentImageIndex * imageWidth;
+            images.style.transform = `translateX(${newTransform}px)`;
+        }
+    </script>
 {% endblock %} 
