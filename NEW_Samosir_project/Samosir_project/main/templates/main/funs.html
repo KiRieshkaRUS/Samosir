@@ -9,10 +9,9 @@
             <div class="hotel-info">
                 <div class="carousel">
                     <div class="carousel-images">
-
-                        <img src="hotel1-1.jpg" alt="Отель Солнечный 1">
-                        <img src="hotel1-2.jpg" alt="Отель Солнечный 2">
-                        <img src="hotel1-3.jpg" alt="Отель Солнечный 3">
+                        {% if photo.fun == fun %}
+                            <img src="{{ photo.photo.url }}" alt="{{ photo.fun.name }}">
+                        {% endif %}
                     </div>
                     <button class="carousel-button left" onclick="moveCarousel('left', 0)">‹</button>
                     <button class="carousel-button right" onclick="moveCarousel('right', 0)">›</button>
