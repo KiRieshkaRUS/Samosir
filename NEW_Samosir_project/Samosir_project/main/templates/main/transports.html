@@ -4,8 +4,11 @@
 
 {% block content %}
     <h1>Информация о транспорте до острова Самосир</h1>
+    <h4>Добраться до острова Самосир (он находится в Индонезии на озере Тоба) из России без пересадки в других странах может быть сложно, так как прямые рейсы в этот регион ограничены. Однако вот несколько возможных способов:</h4>
     <ul>
+
         {% for transport in all_transports %}
+
             <div class="hotel-info">
                 <div class="carousel">
                     <div class="carousel-images">
@@ -15,13 +18,10 @@
                             {% endif %}
                         {% endfor %}
                     </div>
-                    <button class="carousel-button left" onclick="moveCarousel('left', 0)">‹</button>
-                    <button class="carousel-button right" onclick="moveCarousel('right', 0)">›</button>
                 </div>
                 <div>
-                    <h3><a href="{% url 'main:shelter' shelter.shelter_slug %}">{{ transport.shelter_name }}</a></h3>
+                    <h3><a href="{% url 'main:transport' transport.transport_slug %}">{{ transport.transport_name }}</a></h3>
                     <p>Тип: {{ transport.type }}</p>
-                    <p>Месторасположение: {{ transport.placement }}</p>
                     <p>Описание: {{ transport.description }}</p>
                     <p>Скорость: {{ transport.speed }}</p>
                     <p>Стоимость: {{ transport.price }}</p>
@@ -32,32 +32,29 @@
             <li>
                 <h3>На данный момент нет транспорта</h3>
             </li>
+
         {% endfor %}
 
+    <br><br><br><br><br><br><br><br>
     </ul>
 
     <script>
-        let currentImageIndex = 0;
-
-        function moveCarousel(direction) {
-            const images = document.querySelector('.carousel-images');
-            const totalImages = images.children.length;
-            const imageWidth = images.children[0].offsetWidth; // Ширина изображения
+        function moveCarousel(direction, index) {
+            const carousel = document.querySelectorAll('.carousel-images')[index];
+            const totalImages = carousel.children.length;
+            let currentTransform = parseInt(window.getComputedStyle(carousel).transform.split(',')[4] || 0);
+            const imageWidth = carousel.children[0].offsetWidth; // Убираем отступы между картинками
+            let newTransform;
 
             if (direction === 'left') {
-                currentImageIndex--;
-                if (currentImageIndex < 0) {
-                    currentImageIndex = totalImages - 1; // Вернуться к последнему изображению
-                }
+                newTransform = currentTransform + imageWidth;
+                if (newTransform > 0) newTransform = -imageWidth * (totalImages - 1); // цикл карусели
             } else {
-                currentImageIndex++;
-                if (currentImageIndex >= totalImages) {
-                    currentImageIndex = 0; // Вернуться к первому изображению
-                }
+                newTransform = currentTransform - imageWidth;
+                if (newTransform < -imageWidth * (totalImages - 1)) newTransform = 0; // цикл карусели
             }
 
-            const newTransform = -currentImageIndex * imageWidth;
-            images.style.transform = `translateX(${newTransform}px)`;
+            carousel.style.transform = `translateX(${newTransform}px)`;
         }
     </script>
 {% endblock %}

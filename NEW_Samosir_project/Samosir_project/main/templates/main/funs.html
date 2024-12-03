@@ -13,11 +13,9 @@
                             <img src="{{ photo.photo.url }}" alt="{{ photo.fun.name }}">
                         {% endif %}
                     </div>
-                    <button class="carousel-button left" onclick="moveCarousel('left', 0)">‹</button>
-                    <button class="carousel-button right" onclick="moveCarousel('right', 0)">›</button>
                 </div>
                 <div>
-                    <h3><a href="{% url 'main:shelter' shelter.shelter_slug %}">{{ transport.shelter_name }}</a></h3>
+                    <h3><a href="{% url 'main:fun' fun.fun_slug %}">{{ fun.fun_name }}</a></h3>
                     <p>Тип: {{ fun.type }}</p>
                     <p>Месторасположение: {{ fun.speed }}</p>
                     <p>Описание: {{ fun.description }}</p>
@@ -30,7 +28,7 @@
                 <h3>На данный момент нет развлечений</h3>
             </li>
         {% endfor %}
-
+        <br><br><br><br><br><br><br><br>
     </ul>
 
     <script>

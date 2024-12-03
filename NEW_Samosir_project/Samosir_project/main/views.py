@@ -32,7 +32,7 @@ def transports(request):
 
 def transport_view(request, transport_slug):
     transport_obj = Transport.objects.get(transport_slug=transport_slug)
-    photos = TransportPhoto.objects.filter(shelter=transport_obj)
+    photos = TransportPhoto.objects.filter(transport=transport_obj)
     context = {'transport': transport_obj, 'photos': photos}
 
     return render(request, 'main/transport.html', context)
@@ -48,7 +48,7 @@ def funs(request):
 
 def fun_view(request, fun_slug):
     fun_obj = Fun.objects.get(fun_slug=fun_slug)
-    photos = FunPhoto.objects.filter(shelter=fun_obj)
+    photos = FunPhoto.objects.filter(fun=fun_obj)
 
     context = {'fun': fun_obj, 'photos': photos}
 
